@@ -1,0 +1,88 @@
+﻿@charset "utf-8";
+
+* { margin:0; padding:0; }
+li { list-style-type:none; }
+a { text-decoration:none; color:#666; }
+img { border:none; vertical-align:none; }
+em, address { font-style:normal; }
+input { vertical-align:none; }
+/* reset 끝 */
+
+
+
+body { font-size:12px; color:#666; line-height:150%; }
+body * { box-sizing:border-box; }
+
+/* wrapper */
+#wrapper { width:1200px; margin:0 auto; /*outline:1px solid red;*/ }
+
+/* header */
+#header { width:100%; height:100px; background-color:#eee; }
+	.logoText { display:none; transition:all 0.5s; } /* 모바일용 텍스트 로고 */
+
+/* container */
+#container { }
+	.menu { float:right; }
+		.menu li { float:left; }
+			.menu li a { display:block; width:150px; height:40px; text-align:center; line-height:40px; font-size:16px; font-family:"맑은 고딕";/* transition:all 0.5s; outline:1px solid red;*/ }
+			.menu li a:hover { font-weight:bold; color:#000; }
+	
+	#mobile { display:none; }
+	
+	.content { clear:both; }
+		.content p { text-align:justify; margin:10px 0; }
+		.content p:hover { background-color:#eee; color:#000; }
+
+/* footer */
+#footer { width:100%; padding:30px; background-color:#aaa; text-align:center; }
+	address { color:#fff; }
+/* 공용 끝*/
+
+
+/* 모바일용 779px이하 */
+@media screen and (max-width:779px){
+	/* wrapper */
+	#wrapper { width:90%; margin:0 auto; /*outline:1px solid red;*/ }
+
+	/* header */
+	#header { width:100%; }	
+		.logoImage { display:none; } /* 호랑이 이미지 로고 */
+		.logoText { display:block; line-height:100px; text-align:center; } /* 모바일용 텍스트 로고 */
+			.logoText a { font-size:30px; color:lightblue; transition:all 0.5s; }
+			.logoText a:hover { color:#000; }
+
+	/* container */
+	#container { }
+		.menu { display:none;/*margin:50px 0 30px 5px; */ float:left; }
+			.menu li { float:none; }
+				.menu li a { width:100%; text-align:left; }				
+		
+		#mobile { display:block; height:40px; border-bottom:1px solid #666; position:relative; }
+			#mobile a { position:absolute; top:10px; left:5px; font-size:20px; font-weight:bold; }
+			#mobile .hamburger { position:absolute; top:10px; right:5px; }
+			
+		.content { margin-top:30px; }	
+}
+/* 태블릿용 780px~1119px */
+@media screen and (min-width:780px) and (max-width:1119px) {
+	/* wrapper */
+	#wrapper { width:75%; margin:0 auto; /*outline:1px solid red;*/ }
+
+	/* header */
+	#header { width:100%; }	
+		.logoText { display:none; } /* 모바일용 텍스트 로고 */
+		.logoImage { display:block; } /* 호랑이 이미지 로고 */
+		
+
+	/* container */
+	#container { position:relative; }
+		.menu { display:block; position:absolute; width:200px; /*outline:1px solid blue;*/ }			
+				.menu li a { width:200px; text-align:center; height:40px; line-height:40px; }	
+				.menu li a:hover { border-bottom:1px solid #666; }				
+		#mobile { display:none; }			
+		.content { position:relative; margin-top:10px; margin-left:220px; }	
+
+	#footer { clear:both; }
+}
+
+/* pc용 1200px이상 */
